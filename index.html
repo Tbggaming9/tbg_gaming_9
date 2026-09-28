@@ -1,1 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="TBG Gaming 9 — Telugu Gaming Community">
+<title>TBG Gaming 9 | Telugu Gaming Community</title>
+<style>
+:root{
+  --bg:#03070d; --panel:#07111c; --blue:#00bfff; --cyan:#12d9ff;
+  --purple:#7c35ff; --green:#19e66b; --text:#eef7ff; --muted:#a8b8c8;
+  --line:rgba(0,191,255,.28);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,Helvetica,sans-serif;background:
+  radial-gradient(circle at 80% 15%,rgba(0,153,255,.13),transparent 28%),
+  radial-gradient(circle at 15% 70%,rgba(105,0,255,.10),transparent 28%),var(--bg);
+  color:var(--text);line-height:1.5;overflow-x:hidden
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,92%);margin:auto}
+header{
+  position:sticky;top:0;z-index:50;background:rgba(2,7,13,.88);
+  backdrop-filter:blur(14px);border-bottom:1px solid var(--line)
+}
+.nav{height:70px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.logo{font-size:26px;font-weight:900;font-style:italic;letter-spacing:-2px}
+.logo span{color:var(--blue)}
+nav{display:flex;gap:26px;font-size:14px;color:#dbe8f5}
+nav a{transition:.25s}nav a:hover,nav a.active{color:var(--cyan)}
+.nav-cta{font-size:12px;letter-spacing:2px;color:#c7d8e8}
+.hero{
+  min-height:650px;display:grid;place-items:center;position:relative;overflow:hidden;
+  background:
+    linear-gradient(90deg,rgba(2,8,15,.97) 0%,rgba(2,8,15,.78) 38%,rgba(2,8,15,.15) 72%,rgba(2,8,15,.55)),
+    url("hero-art.png") center top/cover no-repeat, radial-gradient(circle at 75% 35%, rgba(0,191,255,.18), transparent 30%), #03070d;
+}
+.hero:after{content:"";position:absolute;inset:auto 0 0;height:100px;background:linear-gradient(transparent,var(--bg))}
+.hero-content{position:relative;z-index:3;width:min(1180px,92%);padding:100px 0}
+.kicker{letter-spacing:5px;font-weight:700;color:#d8e8f8;font-size:14px}
+h1{font-size:clamp(60px,10vw,120px);line-height:.82;margin:18px 0;color:white;font-style:italic;letter-spacing:-6px;text-shadow:0 0 28px rgba(0,191,255,.25)}
+h1 span{display:block;color:var(--blue)}
+.hero p{max-width:500px;color:#d7e5f0;font-size:18px}
+.btn{
+  display:inline-flex;align-items:center;gap:12px;margin-top:28px;padding:14px 22px;
+  border:1px solid var(--blue);border-radius:9px;background:linear-gradient(90deg,#04bff0,#0b8dff);
+  color:#001018;font-weight:900;box-shadow:0 0 24px rgba(0,191,255,.22);transition:.25s
+}
+.btn:hover{transform:translateY(-3px);box-shadow:0 0 35px rgba(0,191,255,.42)}
+section{padding:90px 0}
+.section-title{font-size:38px;font-style:italic;color:var(--blue);margin-bottom:15px}
+.section-sub{color:var(--muted);max-width:680px}
+.about-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:center}
+.about-art{min-height:300px;border-radius:20px;border:1px solid var(--line);background:url("hero-art.png") left 43%/auto 180% no-repeat, linear-gradient(135deg,#07111c,#03070d);box-shadow:inset 0 0 80px #000}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}
+.stat{padding:10px 15px;border:1px solid var(--line);border-radius:30px;background:#06121e;color:#bdeeff;font-size:13px}
+.services{background:linear-gradient(180deg,transparent,rgba(0,99,150,.06),transparent)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:35px}
+.card{
+  padding:28px 20px;border:1px solid rgba(0,191,255,.27);border-radius:12px;background:rgba(5,16,28,.8);
+  transition:.25s
+}
+.card:hover{transform:translateY(-7px);border-color:var(--blue);box-shadow:0 12px 40px rgba(0,191,255,.12)}
+.icon{font-size:34px;color:var(--cyan);margin-bottom:18px}
+.card h3{font-size:17px;margin-bottom:8px}.card p{font-size:13px;color:var(--muted)}
+.feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.feature{
+  min-height:300px;border-radius:20px;overflow:hidden;padding:35px;position:relative;border:1px solid;
+  background-size:cover;background-position:center
+}
+.feature:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,4,12,.96),rgba(3,4,12,.5),rgba(3,4,12,.08))}
+.feature>*{position:relative;z-index:1}
+.tournament{border-color:#8235ff;background-image:url("hero-art.png"), linear-gradient(135deg,#10102b,#03070d)}
+.guild{border-color:#1be96a;background-image:url("hero-art.png"), linear-gradient(135deg,#10102b,#03070d);background-position:92% 67%}
+.feature h2{font-size:42px;font-style:italic;margin-bottom:12px}
+.tournament h2{color:#d33cff}.guild h2{color:#28ef72}
+.feature p{max-width:420px;color:#e2eaf2}
+.outline-btn{display:inline-flex;margin-top:25px;padding:12px 20px;border:1px solid currentColor;border-radius:8px;font-weight:800}
+.contact{border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center}
+.contact-box{padding:50px 20px;border:1px solid rgba(125,53,255,.35);border-radius:20px;background:radial-gradient(circle,#15102e,#06101a 60%)}
+.contact h2{font-size:42px;color:#c46cff;font-style:italic}
+.socials{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:22px}
+.social{
+  padding:13px 18px;border:1px solid rgba(255,255,255,.18);border-radius:10px;background:#0a111c
+}
+footer{padding:28px 0;color:#8194a6;font-size:13px}
+.footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:850px){
+  nav{display:none}.nav-cta{display:none}
+  .hero{min-height:620px;background-position:65% 20%}
+  .about-grid,.feature-grid{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr 1fr}
+}
+@media(max-width:520px){
+  .cards{grid-template-columns:1fr}
+  section{padding:65px 0}
+  h1{font-size:65px}
+  .hero p{font-size:15px}
+  .feature h2{font-size:34px}
+}
 
+.hero{background-position:center top;animation:heroDrift 12s ease-in-out infinite alternate}
+.hero-characters{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.char{position:absolute;display:block;object-fit:cover;filter:drop-shadow(0 0 22px rgba(0,191,255,.28));will-change:transform}
+.char-center{
+  width:min(48vw,520px);right:8%;top:2%;
+  clip-path:polygon(26% 0,72% 0,94% 23%,100% 53%,88% 77%,73% 100%,26% 100%,9% 76%,0 48%,8% 20%);
+  animation:floatCenter 4.8s ease-in-out infinite
+}
+.char-right{
+  width:min(28vw,300px);right:-1%;top:13%;
+  clip-path:polygon(20% 0,75% 0,100% 25%,98% 70%,75% 100%,22% 100%,0 68%,3% 25%);
+  filter:drop-shadow(0 0 24px rgba(255,0,120,.32));
+  animation:floatRight 5.5s ease-in-out infinite .4s
+}
+.char-left{
+  width:min(22vw,240px);right:39%;top:25%;
+  clip-path:polygon(25% 0,78% 0,100% 30%,96% 75%,72% 100%,20% 100%,0 70%,5% 28%);
+  animation:floatLeft 4.2s ease-in-out infinite .8s
+}
+@keyframes floatCenter{
+  0%,100%{transform:translate3d(0,0,0) rotate(-1deg) scale(1)}
+  50%{transform:translate3d(0,-13px,0) rotate(1deg) scale(1.015)}
+}
+@keyframes floatRight{
+  0%,100%{transform:translate3d(0,0,0) rotate(1deg)}
+  50%{transform:translate3d(-10px,-16px,0) rotate(-2deg)}
+}
+@keyframes floatLeft{
+  0%,100%{transform:translate3d(0,0,0) rotate(1deg)}
+  50%{transform:translate3d(8px,-11px,0) rotate(-1deg)}
+}
+@keyframes heroDrift{
+  from{background-position:center top}
+  to{background-position:52% 3%}
+}
+@media(max-width:850px){
+  .hero-characters{opacity:.72}
+  .char-center{width:70vw;right:-14%;top:5%}
+  .char-right{width:42vw;right:-7%;top:22%}
+  .char-left{width:34vw;right:42%;top:33%}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero,.char{animation:none!important}
+}
+
+
+/* Uploaded TBG artwork */
+.char-center,.char-right,.char-left{
+  height:auto;
+  max-width:100%;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#home">TBG <span>GAMING 9</span></a>
+    <nav>
+      <a class="active" href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#tournament">Tournament</a>
+      <a href="#contact">Contact</a>
+      <a href="#guild">Join Guild</a>
+    </nav>
+    <div class="nav-cta">PLAY • CONNECT • GROW</div>
+  </div>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="hero-characters" aria-hidden="true">
+    <img class="char char-center" src="character-center.png" alt="" onerror="this.style.display='none'">
+    <img class="char char-right" src="character-right.png" alt="" onerror="this.style.display='none'">
+    <img class="char char-left" src="character-left.png" alt="" onerror="this.style.display='none'">
+  </div>
+  <div class="hero-content">
+    <div class="kicker">WELCOME TO</div>
+    <h1>TBG<span>GAMING 9</span></h1>
+    <p>TELUGU GAMING COMMUNITY</p>
+    <p style="margin-top:8px;font-size:14px">Play Together &nbsp;|&nbsp; Compete Together &nbsp;|&nbsp; Grow Together</p>
+    <a class="btn" href="https://www.instagram.com/tbg_gaming_9_/" target="_blank" rel="noopener">JOIN THE COMMUNITY →</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container about-grid">
+    <div class="about-art" aria-label="TBG Gaming 9 poster artwork"></div>
+    <div>
+      <h2 class="section-title">ABOUT US</h2>
+      <p class="section-sub">TBG Gaming 9 is a Telugu gaming community bringing Telugu players together through gaming, friendship, competition and community.</p>
+      <div class="stats">
+        <span class="stat">👥 Telugu Players</span>
+        <span class="stat">♥ Friendship</span>
+        <span class="stat">🏆 Competition</span>
+        <span class="stat">👥 Community</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="services">
+  <div class="container">
+    <h2 class="section-title">OUR SERVICES</h2>
+    <p class="section-sub">Explore the gaming experience with fellow gamers and connect with Telugu players from across the community.</p>
+    <div class="cards">
+      <article class="card"><div class="icon">👥</div><h3>Meet Fellow Gamers</h3><p>Find and connect with players who share your passion.</p></article>
+      <article class="card"><div class="icon">🎮</div><h3>Play Together</h3><p>Team up and enjoy gaming sessions with the community.</p></article>
+      <article class="card"><div class="icon">💬</div><h3>Connect with Telugu Players</h3><p>Build friendships and gaming connections.</p></article>
+      <article class="card"><div class="icon">📈</div><h3>Build Your Gaming Network</h3><p>Grow your network through games, events and guilds.</p></article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container feature-grid">
+    <article id="tournament" class="feature tournament">
+      <h2>TOURNAMENT</h2>
+      <p>Join our paid and free tournaments with options for Squads and Solo.</p>
+      <a class="outline-btn" href="https://www.instagram.com/tbg_tournaments/" target="_blank" rel="noopener">JOIN TOURNAMENTS →</a>
+    </article>
+    <article id="guild" class="feature guild">
+      <h2>JOIN GUILD</h2>
+      <p>Explore the gaming with our guildmates. Team up, make new friends and experience gaming together.</p>
+      <a class="outline-btn" href="https://www.instagram.com/tbg_bharath/" target="_blank" rel="noopener">JOIN THE GUILD →</a>
+    </article>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="contact-box">
+      <h2>CONTACT US</h2>
+      <p style="margin-top:8px;color:#d9e4ee">FOR JOIN COMMUNITY</p>
+      <p style="margin-top:10px;color:var(--muted)">Want to become part of the TBG Gaming 9 community? Connect with us on Instagram.</p>
+      <div class="socials">
+        <a class="social" href="https://www.instagram.com/tbg_gaming_9_/" target="_blank" rel="noopener">📸 @tbg_gaming_9_</a>
+        <a class="social" href="https://www.instagram.com/tbg_tournaments/" target="_blank" rel="noopener">🏆 @tbg_tournaments</a>
+        <a class="social" href="https://www.instagram.com/tbg_bharath/" target="_blank" rel="noopener">🎮 @tbg_bharath</a>
+      </div>
+      <a class="btn" href="https://www.instagram.com/tbg_gaming_9_/" target="_blank" rel="noopener">FOLLOW NOW →</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer">
+    <strong>TBG GAMING 9</strong>
+    <span>Telugu Gaming Community &nbsp; | &nbsp; Play • Connect • Grow</span>
+    <span>Instagram • YouTube • Discord • X</span>
+  </div>
+</footer>
+</body>
+</html>
